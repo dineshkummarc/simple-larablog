@@ -1,18 +1,18 @@
+@props(['settings'])
+
 <footer>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <ul class="social-icons">
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Behance</a></li>
-                    <li><a href="#">Linkedin</a></li>
-                    <li><a href="#">Dribbble</a></li>
+                    @foreach ($settings['socials'] as $social)
+                        <li><a href="{{ $social['url'] }}">{{ $social['website'] }}</a></li>
+                    @endforeach
                 </ul>
             </div>
             <div class="col-lg-12">
                 <div class="copyright-text">
-                    <p>Copyright 2020 Stand Blog Co.
+                    <p>Copyright 2024 {{ $settings['site_name'] }}.
 
                         | Design: <a rel="nofollow" href="https://templatemo.com" target="_parent">TemplateMo</a>
                     </p>

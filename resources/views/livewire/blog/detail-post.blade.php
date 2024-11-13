@@ -1,5 +1,5 @@
 <div>
-    <x-header />
+    <x-header :settings="$settings" />
 
     <style>
         pre {
@@ -142,5 +142,5 @@
     </section>
 
 
-    <x-footer />
+    <x-footer :settings="$settings" />
 </div>

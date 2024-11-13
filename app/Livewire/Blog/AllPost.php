@@ -4,6 +4,7 @@ namespace App\Livewire\Blog;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Settings\GeneralSettings;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -12,6 +13,8 @@ use Livewire\WithPagination;
 class AllPost extends Component
 {
     use WithPagination;
+
+    public $settings;
 
     #[Url(except: '')]
     public string $search = '';
@@ -28,6 +31,11 @@ class AllPost extends Component
         $this->categories = Category::query()
             ->latest()
             ->get();
+
+        $this->settings = [
+            'site_name' => (new GeneralSettings())->site_name,
+            'socials' => (new GeneralSettings())->socials,
+        ];
     }
     public function render()
     {
@@ -46,6 +54,7 @@ class AllPost extends Component
                 ->published()
                 ->with('category', 'user')
                 ->paginate(1)
-        ]);
+        ])
+            ->title($this->settings['site_name'] . ' - Blogs');
     }
 }

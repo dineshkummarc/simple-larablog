@@ -1,7 +1,7 @@
 <div>
 
     <!-- Header -->
-    <x-header />
+    <x-header :settings="$settings" />
 
     <!-- Page Content -->
     <!-- Banner Starts Here -->
@@ -112,5 +112,5 @@
 
 
     <!-- Footer Starts Here -->
-    <x-footer />
+    <x-footer :settings="$settings" />
 </div>

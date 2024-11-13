@@ -1,5 +1,5 @@
 <div>
-    <x-header />
+    <x-header :settings="$settings" />
     <!-- Page Content -->
     <!-- Banner Starts Here -->
     <div class="heading-page header-text">
@@ -100,5 +100,5 @@
         </div>
     </section>
 
-    <x-footer />
+    <x-footer :settings="$settings" />
 </div>
