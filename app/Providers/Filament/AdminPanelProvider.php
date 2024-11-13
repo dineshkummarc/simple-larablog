@@ -62,7 +62,7 @@ class AdminPanelProvider extends PanelProvider
                     ->slug('my-profile')
                     ->setTitle('My Profile')
                     ->setNavigationLabel('My Profile')
-                    ->setNavigationGroup('Group Profile')
+                    ->setNavigationGroup('Settings Group')
                     ->setIcon('heroicon-o-user')
             ])
             ->userMenuItems([
