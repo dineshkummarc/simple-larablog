@@ -95,7 +95,10 @@
                                     <div class="content">
                                         <ul>
                                             @forelse ($categories as $category)
-                                                <li><a href="#">- {{ $category->name }}</a></li>
+                                                <li>
+                                                    <a href="/blogs?category={{ $category->slug }}" wire:navigate>-
+                                                        {{ $category->name }}</a>
+                                                </li>
                                             @empty
                                                 <li>No Categories</li>
                                             @endforelse
